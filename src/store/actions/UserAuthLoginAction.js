@@ -5,7 +5,7 @@ const UserAuthLoginAction = (email, password) => {
         password
     }
     return async (dispatch, getState) => {
-        let user_auth_details = await axios.post("http://localhost:8090/users/login", userinfo,
+        let user_auth_details = await axios.post("https://zomato-clone-db.herokuapp.com/users/login", userinfo,
             {
                 Headers: {
                     'content-type': 'application/json'

@@ -18,7 +18,7 @@ const Filter = (props) => {
 
     const filterRestaurant = (filterobj) => {
         axios({
-            url: "http://localhost:8090/restaurant/filter",
+            url: "https://zomato-clone-db.herokuapp.com/restaurant/filter",
             method: "POST",
             headers: { 'content-type': 'application/json' },
             data: filterobj
@@ -128,7 +128,7 @@ const Filter = (props) => {
         }
         console.log('obj', filterobj);
         axios({
-            url: "http://localhost:8090/restaurant/filter",
+            url: "https://zomato-clone-db.herokuapp.com/restaurant/filter",
             method: "POST",
             headers: { 'content-type': 'application/json' },
             data: filterobj
@@ -147,7 +147,7 @@ const Filter = (props) => {
         )
 
         axios({
-            url: "http://localhost:8090/location/",
+            url: "https://zomato-clone-db.herokuapp.com/location/",
             method: "GET",
             headers: {
                 "content-type": "application/json"

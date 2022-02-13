@@ -55,7 +55,7 @@ const Details = () => {
         const { id } = qs;
         console.log('id', id);
         axios({
-            url: `http://localhost:8090/restaurant/${id}`,
+            url: `https://zomato-clone-db.herokuapp.com/restaurant/${id}`,
             method: "GET",
             headers: { 'content-type': 'application/json' },
         }).then(
@@ -85,7 +85,7 @@ const Details = () => {
     const handleOrder = () => {
 
         axios({
-            url: `http://localhost:8090/menuitems/${resid}`,
+            url: `https://zomato-clone-db.herokuapp.com/menuitems/${resid}`,
             method: "GET",
             headers: { 'content-type': 'application/json' },
         }).then(
@@ -155,7 +155,7 @@ const Details = () => {
         form.remove();
     }
     const getData = (data_pay) => {
-        return fetch(`http://localhost:8090/api/payment`, {
+        return fetch(`https://zomato-clone-db.herokuapp.com/api/payment`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
