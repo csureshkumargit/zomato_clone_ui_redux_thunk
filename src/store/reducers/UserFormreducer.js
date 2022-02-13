@@ -9,7 +9,6 @@ const initstate = {
     username: []
 }
 const UserFormreducer = (state = initstate, action) => {
-    console.log(action.type)
     switch (action.type) {
         case "USER_FIRST_NAME":
             return {

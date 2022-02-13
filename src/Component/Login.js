@@ -1,7 +1,5 @@
-import react, { useEffect, useState } from "react";
-import axios from "axios";
+import react, { useEffect } from "react";
 import '../Styles/Login.css';
-import { useHistory } from "react-router";
 import { connect } from "react-redux";
 import { Useremail } from "../store/actions/UserFormAction";
 import { Userpassword } from "../store/actions/UserFormAction";
@@ -11,7 +9,6 @@ import UserAuthLoginAction from "../store/actions/UserAuthLoginAction";
 
 const Login = (props) => {
 
-    // const history = useHistory();
     const { email, password, usrMsg, username } = props;
     const showPassword = () => {
         var x = document.getElementById("password");

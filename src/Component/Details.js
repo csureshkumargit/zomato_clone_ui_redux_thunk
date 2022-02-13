@@ -53,7 +53,6 @@ const Details = () => {
     useEffect(() => {
         const qs = QueryString.parse(window.location.search);
         const { id } = qs;
-        console.log('id', id);
         axios({
             url: `https://zomato-clone-db.herokuapp.com/restaurant/${id}`,
             method: "GET",
@@ -92,7 +91,6 @@ const Details = () => {
             res => {
                 setmenu_items(res.data.restaurant_By_Items);
                 setmodalIsOpenMenuItems(true);
-                ////console.log(this.state.menu_items);
             }
         ).catch(
             err => console.log(err)
@@ -174,7 +172,6 @@ const Details = () => {
         };
 
         getData(paymentObj).then(response => {
-            console.log('resp', response);
             var information = {
                 action: "https://securegw-stage.paytm.in/order/process",
                 params: response

@@ -90,7 +90,6 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 const mapStateToProps = (state) => {
-    console.log('state', state);
     return {
         restaurant_list_location: state.wallpaper.restaurant_list_location,
         searchText: state.wallpaper.searchText,

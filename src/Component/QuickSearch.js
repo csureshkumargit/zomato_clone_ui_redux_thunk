@@ -5,9 +5,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 
 const QuickSearch = (props) => {
-    console.log('props', props);
     const { quickSearchItemsData } = props;
-    //const history = useHistory();
     const navigatetoFilter = (mealType_id) => {
         const locationid = sessionStorage.getItem('locationid');
         if (locationid) {
@@ -44,7 +42,7 @@ const QuickSearch = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log('state', state);
+
     return {
         quickSearchItemsData: state.quickSearchItems.quickSearchItems
     }

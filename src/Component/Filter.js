@@ -126,7 +126,7 @@ const Filter = (props) => {
             mealtype,
             location: locationid
         }
-        console.log('obj', filterobj);
+
         axios({
             url: "https://zomato-clone-db.herokuapp.com/restaurant/filter",
             method: "POST",
@@ -137,10 +137,7 @@ const Filter = (props) => {
                 setrestaurant_data_filter(res.data.restaurant_filter);
                 setpages(res.data.pagearr);
                 settotalCount(res.data.totalRestaurantCount);
-                console.log('1', '2');
-                console.table('restaurant_data_filter', this.state.restaurant_data_filter);
-                console.log('Pages', res.data.pagearr);
-                console.log('Count', res.data.totalRestaurantCount);
+
             }
         ).catch(
             err => console.log(err)

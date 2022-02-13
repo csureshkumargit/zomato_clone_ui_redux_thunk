@@ -46,7 +46,6 @@ class Header extends react.Component {
     responseFacebook = (response) => {
 
         this.setState({ username: response.name });
-        console.log(response.name);
     }
     componentClicked = () => {
         this.setState({ modalIsOpenforLogin: false });
@@ -86,14 +85,14 @@ class Header extends react.Component {
                 >
 
 
-                    {/* <FacebookLogin
+                    <FacebookLogin
                         appId="921327618474127"
                         autoLoad={true}
                         fields="name,email,picture"
                         onClick={this.componentClicked}
                         callback={this.responseFacebook}>
 
-                    </FacebookLogin> */}
+                    </FacebookLogin>
                     <div className="user-acct-sign-in">
                         <button className='btn-acct-signin' onClick={this.zomatoUserLogin} >Zomato Sign in</button>
                         <span className="add-to-cart-modal-close" onClick={() => this.handlemodal('modalIsOpenforLogin', false)}><strong class="fas fa-times"></strong></span>

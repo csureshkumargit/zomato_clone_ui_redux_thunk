@@ -83,7 +83,6 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 const mapStateToProps = (state) => {
-    console.log('state', state);
     return {
         firstname: state.userAuthForm.firstname,
         lastname: state.userAuthForm.lastname,
