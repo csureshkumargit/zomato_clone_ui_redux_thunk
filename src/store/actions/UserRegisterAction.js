@@ -7,17 +7,16 @@ const UserRegisterAction = (firstname, lastname, email, password) => {
         password
     }
     return async (dispatch, getState) => {
-        let user_register_details = await axios.post("https://zomato-clone-db.herokuapp.com/users/signup", userinfo,
+        await axios.post("https://zomato-clone-db.herokuapp.com/users/signup", userinfo,
             {
                 Headers: {
                     'content-type': 'application/json'
                 }
             }
-        ).catch(err => console.log('err', err))
-        dispatch({
+        ).then((user_register_details) => dispatch({
             type: "USER_REGISTRATION_SUCCESSFUL", usrMsg: user_register_details.data.message
-        })
-
+        }))
+            .catch(err => console.log('err', err))
     }
 }
 export default UserRegisterAction;

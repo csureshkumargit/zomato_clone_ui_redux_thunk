@@ -7,7 +7,6 @@ import GetRestaurantsByLocationsAction from "../store/actions/GetRestaurantsByLo
 import GetSuggestedRestaurantsAction from "../store/actions/GetSuggestedRestaurantsAction";
 
 const Wallpaper = (props) => {
-    console.log('props', props);
     const { locationsData, restaurant_list_location, searchText, suggestions } = props;
 
     const handlelocationchange = (event) => {
