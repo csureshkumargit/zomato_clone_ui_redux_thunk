@@ -45,7 +45,7 @@ class Header extends react.Component {
         this.props.userformdefault();
     }
     responseFacebook = (response) => {
-
+        console.log('ress', response);
         this.setState({ username: response.name });
     }
     componentClicked = () => {
