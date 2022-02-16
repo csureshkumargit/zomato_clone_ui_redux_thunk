@@ -47,6 +47,7 @@ class Header extends react.Component {
     responseFacebook = (response) => {
         console.log('ress', response);
         this.setState({ username: response.name });
+        this.props.setUsernameforSocialLogin(response.name);
     }
     componentClicked = () => {
         this.setState({ modalIsOpenforLogin: false });
@@ -106,7 +107,8 @@ class Header extends react.Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        userformdefault: () => { dispatch(UserFormDefault()) }
+        userformdefault: () => { dispatch(UserFormDefault()) },
+        setUsernameforSocialLogin: (name) => { dispatch({ type: "SOCIAL_LOGIN", username: name }) }
     }
 
 }

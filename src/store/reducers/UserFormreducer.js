@@ -40,6 +40,11 @@ const UserFormreducer = (state = initstate, action) => {
                 usrMsg: action.usrMsg,
                 username: action.username
             }
+        case "SOCIAL_LOGIN":
+            return {
+                ...state,
+                username: action.username
+            }
         case "USER_AUTH_UNSUCCESSFUL":
             return {
                 ...state,
