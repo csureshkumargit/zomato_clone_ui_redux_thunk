@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import QueryString from "query-string";
 import '../Styles/Filter.css';
+import WithRouter from "./WithRouter";
 const Filter = (props) => {
     const [filterpg, setfilterpg] = useState(false);
     const [restaurant_data_filter, setrestaurant_data_filter] = useState(undefined);
@@ -50,7 +51,7 @@ const Filter = (props) => {
             cuisine
         }
         filterRestaurant(filterobj);
-        props.history.push(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
+        props.router.navigate(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
         &cuisine=${cuisine}`);
     }
     const setCost = (lcost, hcost) => {
@@ -65,7 +66,7 @@ const Filter = (props) => {
             cuisine
         }
         filterRestaurant(filterobj);
-        props.history.push(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
+        props.router.navigate(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
         &cuisine=${cuisine}`);
     }
     const handlelocationchange = (event) => {
@@ -80,7 +81,7 @@ const Filter = (props) => {
             cuisine
         }
         filterRestaurant(filterobj);
-        props.history.push(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
+        props.router.navigate(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
         &cuisine=${cuisine}`);
 
 
@@ -97,7 +98,7 @@ const Filter = (props) => {
             cuisine
         }
         filterRestaurant(filterobj);
-        props.history.push(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
+        props.router.navigate(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
         &cuisine=${cuisine}&page=${page}`);
 
 
@@ -113,7 +114,7 @@ const Filter = (props) => {
             cuisine,
         }
         filterRestaurant(filterobj);
-        props.history.push(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
+        props.router.navigate(`/filter?mealtype=${mealtype}&locationid=${location}&sort=${sort}&lcost=${lcost}&hcost=${hcost}
         &cuisine=${cuisine}`);
 
     }
@@ -180,7 +181,7 @@ const Filter = (props) => {
 
     }
     const handleRestaurantDetails = (Id) => {
-        props.history.push(`/details?id=${Id}`);
+        props.router.navigate(`/details?id=${Id}`);
     }
     return (
         <div>
@@ -303,4 +304,4 @@ const Filter = (props) => {
         </div >
     )
 }
-export default Filter;
+export default WithRouter(Filter);

@@ -6,6 +6,7 @@ import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import { connect } from "react-redux";
 import { compose } from "redux";
+import WithRouter from "./WithRouter";
 import { UserFormDefault } from "../store/actions/UserFormAction";
 
 const customStyles = {
@@ -28,17 +29,17 @@ class Header extends react.Component {
         }
     }
     navigateToHome = () => {
-        this.props.history.push('/');
+        this.props.router.navigate('/')
     }
     handleLoginAccount = () => {
         this.setState({ modalIsOpenforLogin: true });
     }
     zomatoUserLogin = () => {
-        this.props.history.push('/login');
+        this.props.router.navigate('/login');
         this.handlemodal('modalIsOpenforLogin', false);
     }
     zomatoUserSignup = () => {
-        this.props.history.push('/signup');
+        this.props.router.navigate('/signup');
     }
     handleLogout = () => {
         this.props.userformdefault();
@@ -114,4 +115,4 @@ const mapStateToProps = (state) => {
         username: state.userAuthForm.username
     }
 }
-export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(Header);
+export default compose(WithRouter, connect(mapStateToProps, mapDispatchToProps))(Header);

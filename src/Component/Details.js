@@ -165,7 +165,6 @@ const Details = () => {
     }
     const Payments = (e) => {
         e.preventDefault();
-        //const { subtotal, customerEmail } = this.state;
         const paymentObj = {
             amount: subtotal,
             email: customerEmail

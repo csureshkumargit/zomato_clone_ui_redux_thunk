@@ -5,6 +5,9 @@ import { Useremail } from "../store/actions/UserFormAction";
 import { Userpassword } from "../store/actions/UserFormAction";
 import { UserFormDefault } from "../store/actions/UserFormAction";
 import UserAuthLoginAction from "../store/actions/UserAuthLoginAction";
+import { compose } from "redux";
+import WithRouter from "./WithRouter";
+
 
 
 const Login = (props) => {
@@ -20,7 +23,7 @@ const Login = (props) => {
 
     }
     const navigateToHomepage = () => {
-        props.history.push('/');
+        props.router.navigate('/');
 
     }
 
@@ -72,7 +75,6 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 const mapStateToProps = (state) => {
-    console.log('state', state);
     return {
         email: state.userAuthForm.email,
         password: state.userAuthForm.password,
@@ -80,4 +82,4 @@ const mapStateToProps = (state) => {
         username: state.userAuthForm.username
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default compose(WithRouter, connect(mapStateToProps, mapDispatchToProps))(Login);

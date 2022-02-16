@@ -1,6 +1,6 @@
 import react from "react";
 import { Component } from "react";
-import { withRouter } from "react-router";
+import WithRouter from "./WithRouter";
 import { connect } from "react-redux";
 import { compose } from "redux";
 
@@ -9,10 +9,10 @@ const QuickSearch = (props) => {
     const navigatetoFilter = (mealType_id) => {
         const locationid = sessionStorage.getItem('locationid');
         if (locationid) {
-            props.history.push(`/filter?mealtype=${mealType_id}&locationid=${locationid}`);
+            props.router.navigate(`/filter?mealtype=${mealType_id}&locationid=${locationid}`);
         }
         else {
-            props.history.push(`/filter?mealtype=${mealType_id}`);
+            props.router.navigate(`/filter?mealtype=${mealType_id}`);
         }
 
     }
@@ -48,4 +48,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default compose(withRouter, connect(mapStateToProps, null))(QuickSearch);
+export default compose(WithRouter, connect(mapStateToProps, null))(QuickSearch);

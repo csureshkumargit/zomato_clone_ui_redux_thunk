@@ -3,6 +3,9 @@ import '../Styles/Signup.css';
 import { connect } from "react-redux";
 import { Userfirstname, Userlastname, Useremail, Userpassword, UserFormDefault } from "../store/actions/UserFormAction";
 import UserRegisterAction from "../store/actions/UserRegisterAction";
+import { compose } from "redux";
+import WithRouter from "./WithRouter";
+
 
 const Signup = (props) => {
     const { firstname, lastname, email, password, usrMsg } = props;
@@ -16,7 +19,7 @@ const Signup = (props) => {
 
     }
     const navigateToLoginPage = () => {
-        props.history.push('/login');
+        props.router.navigate('/login');
 
     }
 
@@ -91,4 +94,4 @@ const mapStateToProps = (state) => {
         usrMsg: state.userAuthForm.usrMsg
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default compose(WithRouter, connect(mapStateToProps, mapDispatchToProps))(Signup);
