@@ -2,7 +2,7 @@ import axios from "axios";
 const GetMealTypesAction = () => {
     return async (dispatch, getState) => {
 
-        await axios.get("https://zomato-clone-db.herokuapp.com/mealtype/", {
+        await axios.get("https://zomato-services.onrender.com/mealtype/", {
             headers: {
                 "content-type": "application/json"
             }

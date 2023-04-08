@@ -7,7 +7,7 @@ const UserRegisterAction = (firstname, lastname, email, password) => {
         password
     }
     return async (dispatch, getState) => {
-        await axios.post("https://zomato-clone-db.herokuapp.com/users/signup", userinfo,
+        await axios.post("https://zomato-services.onrender.com/users/signup", userinfo,
             {
                 Headers: {
                     'content-type': 'application/json'

@@ -2,7 +2,7 @@ import axios from "axios";
 const GetRestaurantLocationsAction = () => {
     return async (dispatch, getState) => {
 
-        await axios.get("https://zomato-clone-db.herokuapp.com/location/", {
+        await axios.get("https://zomato-services.onrender.com/location/", {
             headers: {
                 "content-type": "application/json"
             }
